@@ -11,9 +11,15 @@
 char* readline();
 
 // Complete the solve function below.
-void solve(double meal_cost, int tip_percent, int tax_percent) {
-
-
+void solve(double meal_cost, int tip_percent, int tax_percent)
+{
+    double totalCost;
+    float tip,tax;
+        printf("$$$ %lf, %% %d, tax%% %d\n", meal_cost, tip_percent, tax_percent);
+        tip = meal_cost * tip_percent/100;
+        tax = meal_cost * tax_percent/100;
+        totalCost = meal_cost + tip + tax;
+        printf("%.0lf\n",round(totalCost));
 }
 
 int main()
@@ -44,7 +50,7 @@ int main()
 char* readline() {
     size_t alloc_length = 1024;
     size_t data_length = 0;
-    char* data = malloc(alloc_length); //memset (data, 0, alloc_length)
+    char* data = malloc(alloc_length);
 
     while (true) {
         char* cursor = data + data_length;
